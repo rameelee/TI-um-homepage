@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="icon" type="image/png" href="0A.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TI:um - SNUTI Honor Society</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
+    <style>
+        /* 1. 기본 설정 및 컬러 시스템 */
+        :root {
+            --primary-color: #006837; /* 서울대 상징색과 유사한 짙은 초록 또는 자연의 초록 */
+            --accent-color: #8BC34A; /* 새싹을 연상시키는 밝은 연두 */
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --bg-light: #F9FAFB;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard', sans-serif; }
+        body { line-height: 1.6; color: var(--text-dark); background-color: #fff; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        
+        /* 2. 헤더 (로고 및 네비게이션) */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 5%; background: white; 
+            border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000;
+        }
+
+        .logo-link { display: flex; align-items: center; gap: 10px; }
+        .logo-img { height: 50px; width: auto; } /* 로고 높이 조절 */
+        .logo-text { font-size: 1.5rem; font-weight: 800; color: var(--primary-color); letter-spacing: -0.5px; }
+        .logo-text span { color: var(--text-dark); font-weight: 400; font-size: 0.9rem; margin-left: 8px;}
+        
+        nav ul { display: flex; gap: 40px; }
+        nav a { font-weight: 600; color: var(--text-dark); font-size: 1rem; }
+        nav a:hover { color: var(--primary-color); }
+
+        /* 3. 히어로 섹션: 배경을 깨끗한 흰색으로 변경 */
+	.hero {
+            background-color: white;
+            height: 100vh; /* 화면 꽉 차게 */
+            display: flex; 
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            padding: 20px;
+            position: relative; /* 자식 요소들의 기준점 */
+            overflow: hidden;
+        }
+
+	/* 3-1. 로고 애니메이션 (싹 트는 효과) */
+	@keyframes sprout-up {
+            0% {
+                opacity: 0;
+                transform: scaleY(0.1) scaleX(0.1) translateY(100%); /* 납작하게 바닥에 붙어있음 */
+            }
+            100% {
+                opacity: 0.2; /* [중요] 글씨와 겹치니까 투명도를 낮춰서 배경처럼 보이게 함 (조절 가능) */
+                transform: scaleY(1) scaleX(1) translateY(0); /* 원래 크기로 성장 */
+            }
+        }
+
+	/* 3-2. 히어로 영역의 로고 이미지 스타일 */
+	.hero-logo-img {
+            position: absolute; /* 글씨와 겹치게 절대 위치 지정 */
+            bottom: 0; /* 화면 아래쪽에 붙임 */
+            width: 80%;
+            max-width: 800px;
+            height: auto;
+            z-index: 1; /* 글씨보다 뒤에 배치 */
+            transform-origin: bottom center; /* [핵심] 아래쪽 중앙을 기준으로 커짐 */
+    
+    	    /* 2.5초 동안 쑥 올라옴 */
+            animation: sprout-up 2.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        }
+
+	/* [수정됨] 히어로 텍스트 컨텐츠: 로고 위에 뜨게 설정 */
+        .hero-content {
+            z-index: 2; /* 로고보다 앞에 배치 */
+            position: relative;
+            background: rgba(255, 255, 255, 0.7); /* 글씨 잘 보이게 살짝 흰 배경 깔아줌 (선택사항) */
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px); /* 배경 흐림 효과 */
+	
+		/* 텍스트도 서서히 나타나게 */
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out 1s forwards; /* 로고 올라오고 나서 1초 뒤 등장 */
+        }
+
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; font-weight: 800; line-height: 1.2; }
+        .hero p { font-size: 1.2rem; margin-bottom: 40px; max-width: 700px; opacity: 0.9; }
+        .hero-subtitle { font-size: 1.1rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-color); margin-bottom: 10px; font-weight: 700; }
+        
+        .btn {
+            padding: 15px 40px; background: var(--primary-color); color: white;
+            border-radius: 50px; font-weight: 700; font-size: 1.1rem;
+            border: 2px solid transparent; display: inline-block;
+        }
+	.btn:hover { background: white; color: var(--primary-color); border: 2px solid var(--primary-color); }
+
+        @keyframes fadeIn { to { opacity: 1; } }
+
+        /* 4. 소개 (About) */
+        section { padding: 100px 5%; max-width: 1400px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.2rem; font-weight: 700; margin-bottom: 15px; color: var(--primary-color); }
+        .section-header p { color: var(--text-light); }
+
+        .about-container { display: flex; align-items: center; gap: 60px; }
+        .about-text { flex: 1; }
+        .about-text h3 { font-size: 1.8rem; margin-bottom: 20px; font-weight: 700; }
+        .about-text p { margin-bottom: 15px; color: var(--text-light); text-align: justify;}
+        .about-img { 
+            flex: 1; height: 400px; border-radius: 20px; 
+            background: url('IMG_0273.jpg') center/cover;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* 5. 활동 (Activities) */
+        .activities-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+        .activity-card { 
+            display: block; /* a태그를 블록으로 */
+            background: var(--bg-light); border-radius: 20px; padding: 40px 30px; text-align: center; 
+            transition: 0.3s; border: 1px solid transparent; cursor: pointer;
+        }
+        .activity-card:hover { 
+            transform: translateY(-10px); background: white; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-color: var(--primary-color); 
+        }
+        .icon-box { 
+            width: 80px; height: 80px; background: #E8F5E9; color: var(--primary-color);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; margin: 0 auto 25px auto;
+        }
+
+	/* 6. 구성원 소개 (Members) */
+        .center-box {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* 7. 푸터 */
+        footer { background: #111; color: #888; padding: 60px 5%; text-align: center; font-size: 0.9rem; }
+        footer strong { color: white; display: block; margin-bottom: 10px; font-size: 1.2rem; }
+
+        /* 모바일 반응형 */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; }
+            .hero h1 { font-size: 2.2rem; }
+            .about-container { flex-direction: column; }
+            .activities-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="tium251208.html" class="logo-link">
+	<img src="한글4A.png" alt="TI:um Logo" class="logo-img">
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#activities">Activities</a></li>
+		<li><a href="#members">Members</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+    	<img src="0A.png" alt="TI:um Logo" class="hero-logo-img">
+        <div class="hero-subtitle">SNUTI Honor Society</div>
+        <h1>지식의 싹을 틔우다<br>티:움 (TI:um)</h1>
+        <p>서울대학교 첨단융합학부 학생주도학술공동체,<br>우리는 경계를 넘어 새로운 가치를 창조합니다.</p>
+        <a href="#about" class="btn">TI:um 알아보기</a>
+    </section>
+
+    <section id="about">
+        <div class="about-container">
+            <div class="about-img"></div>
+            <div class="about-text">
+                <h2>About TI:um</h2>
+                <h3>융합적 사고로<br>미래를 틔웁니다.</h3>
+                <p>
+                    <strong>티:움(TI:um)</strong>은 서울대학교 첨단융합학부의 공식 학생주도학술공동체(SNUTI Honor Society)입니다. 
+                    '티:움'이라는 이름은 Transdisciplinary Innovation(첨단융합)의 약자와 우리말 '틔움'의 의미를 담고 있습니다.
+                </p>
+                <p>
+                    우리는 다양한 전공 배경을 가진 학생들이 모여 학술적 깊이를 더하고, 
+                    서로의 지식을 나누며 함께 성장하는 것을 목표로 합니다. 
+                    단순한 학습을 넘어, 사회에 기여할 수 있는 실천적인 지성 공동체를 지향합니다.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="activities">
+        <div class="section-header">
+            <h2>Activity Archives</h2>
+            <p>아이콘을 클릭하면 세부 활동 내역을 확인할 수 있습니다.</p>
+        </div>
+        <div class="activities-grid">
+            <a href="collaboration.html" class="activity-card">
+                <div class="icon-box">🤝</div>
+                <h3>대외교류 아카이브</h3>
+                <p>타 대학 연합 세미나, 초청 강연 등 교류 활동 내역 모음</p>
+            </a>
+            <a href="academic.html" class="activity-card">
+                <div class="icon-box">📚</div>
+                <h3>학술나눔 아카이브</h3>
+                <p>멘토링, 스터디, 교육 봉사 등 지식 나눔 활동 기록</p>
+            </a>
+        </div>
+    </section>
+
+<section id="members">
+        <div class="section-header">
+            <h2>Our Members</h2>
+            <p>열정적인 티:움의 운영진을 소개합니다.</p>
+	</div>
+	<div class="center-box">
+            <a href="members.html" class="btn">알아보기</a>
+        </div>
+    </section>
+
+
+    <footer id="contact">
+        <strong>TI:um | SNUTI Honor Society</strong>
+        <p>서울대학교 첨단융합학부 학생주도학술공동체 티:움</p>
+        <p>문의: snuti.tium@gmail.com </p>
+        <br>
+        <p>&copy; 2026 TI:um. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
