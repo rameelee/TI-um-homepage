@@ -7,6 +7,22 @@
     <title>TI:um - SNUTI Honor Society</title>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
     <style>
+
+		/* [수정됨] 페이지 전체 틀 잡기 */
+		html, body {
+		    display: block !important; /* [핵심] 가로 정렬(flex)을 취소하고 세로 정렬(block)로 강제 */
+		    width: 100%;
+		    height: auto;
+		    margin: 0;
+		    padding: 0;
+		    overflow-x: hidden; /* 가로 스크롤 방지 */
+		    
+		    /* 폰트 및 기본 설정 */
+		    line-height: 1.6;
+		    color: var(--text-dark);
+		    background-color: #fff;
+		}
+		
 		/* [추가] 드롭다운 메뉴 스타일 */
 		nav ul li {
 		    position: relative; /* 하위 메뉴의 기준점 */
