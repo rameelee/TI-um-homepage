@@ -28,7 +28,40 @@
         .talent-box { background: var(--bg-light); padding: 30px; border-radius: 15px; text-align: center; }
         .talent-box h4 { color: var(--primary-color); font-size: 1.2rem; margin-bottom: 10px; }
         
-        footer { background: #111; color: #888; padding: 40px 5%; text-align: center; margin-top: 50px; }
+        /* (원준이가 추가함) 푸터 */
+        footer { background: #111; color: #888; padding: 60px 5%; text-align: center; font-size: 0.9rem; }
+        footer strong { color: white; display: block; margin-bottom: 10px; font-size: 1.2rem; }
+
+		/* [추가] 푸터 SNS 및 관련 사이트 스타일 */
+		.footer-content {
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		    gap: 20px;
+		}
+		.social-icons {
+		    display: flex;
+		    gap: 15px;
+		}
+		.social-icons a {
+		    width: 40px; height: 40px;
+		    background: #333; /* 아이콘 배경색 */
+		    border-radius: 50%;
+		    display: flex; align-items: center; justify-content: center;
+		    transition: 0.3s;
+		}
+		.social-icons a:hover { background: var(--primary-color); transform: translateY(-3px); }
+		.social-icons svg { width: 20px; height: 20px; fill: white; }
+		
+		.related-sites {
+		    margin-top: 10px;
+		    padding: 10px;
+		    border-top: 1px solid #333;
+		}
+		.related-sites a {
+		    font-size: 0.85rem; color: #888; margin: 0 10px; text-decoration: underline;
+		}
+		.related-sites a:hover { color: white; }
     </style>
 </head>
 <body>
@@ -40,23 +73,39 @@
         </div>
     </header>
 
-    <section id="greeting">
+    <section id="Greetings">
         <h2>Greetings</h2>
-        <h3>"변화의 중심에서 미래를 틔웁니다"</h3>
+        <h3>"함께 빚어낼 자유로운 꿈, 미래를 여는 담대한 도전"</h3>
         <p>
-            안녕하십니까, 서울대학교 첨단융합학부 학생주도학술공동체 티:움(TI:um)입니다.<br>
-            우리는 급변하는 기술 사회 속에서 단순한 지식 습득을 넘어, 서로 다른 분야를 융합하여 새로운 가치를 창출하고자 모였습니다.
+            안녕하세요, 서울대학교 첨단융합학부 학생 주도 학술공동체 티:움(TI:um)입니다.<br>
+			우리는 변화의 씨앗을 심고, 가능성의 싹을 틔우기 위해 모였습니다.
+			<br>
+			티:움(TI:um)은 '싹이 트다', '가능성의 열리다'는 뜻을 지닌 순우리말 '틔움'과 첨단융합학부의 영문명 Transdisciplinary Innovations(TI)의 약어를 결합하여 탄생한 이름입니다.<br>
+			<b>티:움은 융합의 땅 위에 뿌려진 가능성의 씨앗입니다.</b><br>
+			우리는 기술, 인문, 예술, 과학 등 서로 다른 영역을 가로지르며 지식의 경계를 허물고, 새로운 생각의 싹을 튀워 미래를 향한 <b>지속가능한 혁신의 꽃을 피우고자 합니다.</b><br><br>
+			도전하는 이들의 뿌리이자, 자라나는 상상혁의 공간,<br>그리고 <b>함께 자라나는 미래의 이름</b>입니다.
         </p>
-        <p>
-            티:움은 여러분의 열정이 싹트고, 그 싹이 거대한 나무로 자라날 수 있는 비옥한 토양이 되겠습니다.
-        </p>
+		/*우리는 급변하는 기술 사회 속에서 단순한 지식 습득을 넘어, 서로 다른 분야를 융합하여 새로운 가치를 창출하고자 모였습니다.*/
         <p style="text-align: right; font-weight: bold; margin-top: 30px;">
-            제 1대 회장 홍길동 올림
+            제 1기 회장 전원준
         </p>
     </section>
 
-    <section id="leadership">
-        <h2>Leadership Principle</h2>
+	<section id="About">
+        <h2>About</h2>
+        <h3>"Freely Dream Together, Boldly Challenge the Future"</h3>
+        <p>
+            TI:um is an officially recognized student honor society established by the School of Transdisciplinary Innovations, Seoul National University. It was founded through the full initiative of students and led by students from the first proposal to its official establishment in December 2025 with 20 members. It is now home to 20+ undergraduate members and fellows, 7+ past and present subgroups, 5+ collaborative institutions and student organizations, thanks to the full support of the school and inspiring members.
+			<br>
+			TI:um is a place of discovery, creativity, connection and innovation. Dedicated to our foundational mission—Freely Dream Together, Boldly Challenge the Future—we are working to create innovations through benefiting society with various projects both on and beyond campus. From monthly academic seminars, open subgroup activities, international academic exchange programs, to social contribution projects in collaboration with the Hokkaido University, Japan, all of these various projects are created and carried out by students.
+			<br> Students of TI:um freely cross the domains of technology, humanities, arts, and sciences—connecting ideas flexibly in their intersections to create impactful solutions for the most important and challenging global problems. Through transdisciplinary approaches, TI:um provides fertile soil to let students sprout creative ideas and blossom sustainable innovations towards a better future.
+			<br>An open and caring innovative community for those who challenge, a spring of passionate aspirations, and a heartfelt community that grows together toward a better future.
+			<br>We are TI:um.
+		</p>
+    </section>
+
+    <section id="Leadership Principles">
+        <h2>Leadership Principles</h2>
         <p>티:움의 리더십 원칙은 우리가 일하고 소통하는 방식의 기준입니다.</p>
         
         <div style="margin-top:30px;">
@@ -104,7 +153,7 @@
         </div>
     </section>
 
-    <section id="talent">
+    <section id="Talent">
         <h2>Core Values and Talent</h2>
         <p>티:움이 지향하는 인재상은 다음과 같습니다.</p>
 
@@ -132,7 +181,7 @@
         </div>
     </section>
 
-    <footer id="contact">
+    <footer id="Contact">
 	    <div class="footer-content">
 	        <div>
 	            <strong>TI:um | Student Honor Society at SNUTI</strong>
