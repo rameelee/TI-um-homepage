@@ -1,1 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About TI:um</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
+    <style>
+        /* [공통 스타일 - index.html과 동일한 분위기 유지] */
+        :root { --primary-color: #006837; --text-dark: #1F2937; --text-light: #6B7280; --bg-light: #F9FAFB; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard', sans-serif; }
+        body { color: var(--text-dark); background: #fff; }
+        a { text-decoration: none; color: inherit; }
 
+        /* 헤더 스타일 */
+        header { padding: 20px 5%; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; background: white; z-index: 1000; }
+        .logo { font-weight: 800; color: var(--primary-color); font-size: 1.5rem; }
+        .back-btn { font-weight: bold; margin-right: 15px; }
+
+        /* 섹션 스타일 */
+        section { padding: 80px 5%; max-width: 1000px; margin: 0 auto; border-bottom: 1px solid #eee; }
+        h2 { font-size: 2rem; color: var(--primary-color); margin-bottom: 20px; }
+        h3 { font-size: 1.4rem; margin-bottom: 15px; color: #333; }
+        p { line-height: 1.8; color: var(--text-light); margin-bottom: 20px; text-align: justify; }
+        
+        /* 인재상 박스 스타일 */
+        .talent-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+        .talent-box { background: var(--bg-light); padding: 30px; border-radius: 15px; text-align: center; }
+        .talent-box h4 { color: var(--primary-color); font-size: 1.2rem; margin-bottom: 10px; }
+        
+        footer { background: #111; color: #888; padding: 40px 5%; text-align: center; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div style="display:flex; align-items:center;">
+            <a href="index.html" class="back-btn">← Home</a>
+            <span class="logo">About TI:um</span>
+        </div>
+    </header>
+
+    <section id="greeting">
+        <h2>Greetings</h2>
+        <h3>"변화의 중심에서 미래를 틔웁니다"</h3>
+        <p>
+            안녕하십니까, 서울대학교 첨단융합학부 학생주도학술공동체 티:움(TI:um)입니다.<br>
+            우리는 급변하는 기술 사회 속에서 단순한 지식 습득을 넘어, 서로 다른 분야를 융합하여 새로운 가치를 창출하고자 모였습니다.
+        </p>
+        <p>
+            티:움은 여러분의 열정이 싹트고, 그 싹이 거대한 나무로 자라날 수 있는 비옥한 토양이 되겠습니다.
+        </p>
+        <p style="text-align: right; font-weight: bold; margin-top: 30px;">
+            제 1대 회장 홍길동 올림
+        </p>
+    </section>
+
+    <section id="leadership">
+        <h2>Leadership Principle</h2>
+        <p>티:움의 리더십 원칙은 우리가 일하고 소통하는 방식의 기준입니다.</p>
+        
+        <div style="margin-top:30px;">
+            <h3>1. 융합적 사고 (Convergence)</h3>
+            <p>전공의 벽을 넘어 다양한 관점을 존중하고 결합하여 창의적인 해결책을 찾습니다.</p>
+            
+            <h3>2. 주도적 실천 (Initiative)</h3>
+            <p>기다리지 않고 먼저 문제를 발견하고 해결을 위해 행동합니다.</p>
+            
+            <h3>3. 동반 성장 (Growth Together)</h3>
+            <p>나만의 성장이 아닌, 동료와 함께 성장하며 지식을 나눕니다.</p>
+        </div>
+    </section>
+
+    <section id="talent">
+        <h2>Talent Model</h2>
+        <p>티:움이 지향하는 인재상은 다음과 같습니다.</p>
+
+        <div class="talent-grid">
+            <div class="talent-box">
+                <h4>Transdisciplinary</h4>
+                <p>경계를 넘나드는<br>융합형 인재</p>
+            </div>
+            <div class="talent-box">
+                <h4>Innovative</h4>
+                <p>혁신을 두려워하지 않는<br>도전적인 인재</p>
+            </div>
+            <div class="talent-box">
+                <h4>Communicative</h4>
+                <p>소통하고 협력하는<br>열린 인재</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 TI:um. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
