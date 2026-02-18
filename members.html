@@ -59,6 +59,70 @@
         .member-card h4 { font-size: 1.3rem; margin-bottom: 5px; font-weight: 700; }
         .member-card p { font-size: 0.95rem; color: var(--text-light); }
 
+        /* [추가] 역대 멤버 아카이브 스타일 */
+        .archive-controls {
+            text-align: right; /* 오른쪽 정렬 (참고 이미지처럼) */
+            margin-bottom: 20px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 5%;
+        }
+        
+        .gen-select {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: 2px solid #eee;
+            border-radius: 5px;
+            color: var(--text-dark);
+            outline: none;
+            cursor: pointer;
+            font-family: 'Pretendard', sans-serif;
+            transition: 0.3s;
+        }
+        
+        .gen-select:hover, .gen-select:focus {
+            border-color: var(--primary-color); /* 초록색 포인트 */
+        }
+        
+        /* 기수별 그룹 (기본적으로 숨김) */
+        .gen-group {
+            display: none; /* 일단 다 숨기고 */
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        /* 활성화된 기수만 보이기 */
+        .gen-group.active {
+            display: block; 
+        }
+        
+        /* 아카이브용 멤버 리스트 (조금 더 컴팩트하게) */
+        .archive-list {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .archive-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        .archive-table th {
+            border-bottom: 2px solid var(--primary-color);
+            padding: 15px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        .archive-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            color: var(--text-dark);
+        }
+        .archive-table tr:last-child td { border-bottom: none; }
+
         footer { background: #111; color: #888; padding: 40px 5%; text-align: center; margin-top: 50px; }
     </style>
 </head>
@@ -174,13 +238,93 @@
         </div>
     </section>
 
+    <section id="archive" style="background-color: #fafafa;">
+        <div class="section-title">
+            <h2>Member Archive</h2>
+            <p>티:움의 발자취를 함께한 역대 멤버들입니다.</p>
+        </div>
+
+        <div class="archive-controls">
+            <select id="genSelect" class="gen-select" onchange="changeGeneration()">
+                <option value="gen1">제1기 (2024-2025)</option>
+                </select>
+        </div>
+
+        <div id="gen1" class="gen-group active">
+            <div class="archive-list">
+                <h3>제1기 SNUTI Honor Society</h3>
+                <p style="margin-bottom:20px; font-size:0.9rem; color:#666;">
+                    활동 기간: 2024.03 ~ 2025.02 | 설립 및 초기 기틀 마련
+                </p>
+                
+                <table class="archive-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 20%;">이름</th>
+                            <th style="width: 30%;">당시 직책</th>
+                            <th>전공/학번</th>
+                            <th>비고</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>홍길동</td>
+                            <td><strong>회장</strong></td>
+                            <td>첨단융합 24</td>
+                            <td>초대 회장</td>
+                        </tr>
+                        <tr>
+                            <td>이영희</td>
+                            <td>부회장</td>
+                            <td>첨단융합 24</td>
+                            <td>학술국 겸임</td>
+                        </tr>
+                        <tr>
+                            <td>김철수</td>
+                            <td>운영위원</td>
+                            <td>첨단융합 24</td>
+                            <td>대외협력 담당</td>
+                        </tr>
+                         <tr>
+                            <td>박지민</td>
+                            <td>Member</td>
+                            <td>첨단융합 24</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        </section>
+    
     <footer>
         <p>&copy; 2026 TI:um. All rights reserved.</p>
     </footer>
+    
+    <script>
+        function changeGeneration() {
+            // 1. 선택된 값(value) 가져오기 (예: "gen1")
+            var selectedValue = document.getElementById("genSelect").value;
+            
+            // 2. 모든 기수 목록 숨기기
+            var groups = document.querySelectorAll('.gen-group');
+            groups.forEach(function(group) {
+                group.classList.remove('active');
+            });
 
+            // 3. 선택된 기수만 보여주기
+            var activeGroup = document.getElementById(selectedValue);
+            if(activeGroup) {
+                activeGroup.classList.add('active');
+            }
+        }
+    </script>
+    
 </body>
 
 </html>
+
 
 
 
