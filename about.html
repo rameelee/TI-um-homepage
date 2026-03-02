@@ -58,16 +58,17 @@
 		}
 		
         /* 헤더 스타일 */
-        header {
+        main-header {
 			display: flex; justify-content: space-between; align-items: center;
             padding: 15px 5%; background: white; 
-            border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000;
+            border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000;}
+		header{
 			padding: 20px 5%; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; background: white; z-index: 1000; }
         .logo { font-weight: 800; color: var(--primary-color); font-size: 1.5rem; }
         .back-btn { font-weight: bold; margin-right: 15px; }
 
         .logo-link { display: flex; align-items: center; gap: 10px; }
-        .logo-img { height: 50px; width: auto; } /* 로고 높이 조절 */
+        .logo-img { height: 40px; width: auto; } /* 로고 높이 조절 - 026.03.03. 수정 이전에는 50이었음*/
         .logo-text { font-size: 1.5rem; font-weight: 800; color: var(--primary-color); letter-spacing: -0.5px; }
         .logo-text span { color: var(--text-dark); font-weight: 400; font-size: 0.9rem; margin-left: 8px;}
         
@@ -132,7 +133,8 @@
 		    }
 		
 		    /* 2. 헤더: 세로 배치 및 정렬 수정 */
-		    header { 
+		    main-header,
+			header { 
 		        flex-direction: column; /* 로고와 메뉴를 위아래로 배치 */
 		        align-items: center;
 		        gap: 15px; /* 로고와 메뉴 사이 간격 */
@@ -141,7 +143,7 @@
 		
 		    /* 로고 크기 모바일 최적화 */
 		    .logo-img {
-		        height: 40px; /* PC보다 조금 작게 줄임 */
+		        height: 30px; /* PC보다 조금 작게 줄임 - 2026.03.03. 수정 이전에는 40이었음. */
 		    }
 		
 		    /* 메뉴 리스트: 화면 밖으로 나가지 않게 수정 */
@@ -169,7 +171,7 @@
 </head>
 <body>
 
-    <header>
+    <main-header>
 		<a href="index.html" class="logo-link">
 	<img src="한글4A.png" alt="TI:um Logo" class="logo-img">
         </a>
@@ -190,12 +192,14 @@
 		        <li><a href="#contact">Contact</a></li>
 		    </ul>
 		</nav>
-		
-        <div style="display:flex; align-items:center;">
+	</main-header>
+
+	<header>
+        <div style="display:flex; align-items:left;">
             <a href="index.html" class="back-btn">← Home</a>
             <span class="logo">About TI:um</span>
         </div>
-    </header>
+	</header>
 
     <section id="Greetings">
         <h2>Greetings</h2>
