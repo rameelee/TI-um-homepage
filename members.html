@@ -7,12 +7,61 @@
     <title>Members - TI:um</title>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
     <style>
-        /* 기본 스타일 (메인과 동일) */
+        /* [공통 스타일 - index.html과 동일한 분위기 유지] */
         :root { --primary-color: #006837; --text-dark: #1F2937; --text-light: #6B7280; --bg-light: #F9FAFB; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard', sans-serif; }
         body { color: var(--text-dark); background: #fff; }
         a { text-decoration: none; color: inherit; }
-
+		/* 원준이가 추가한 부분 시작 - 2026.03.03. */
+		/* 드롭다운 메뉴 스타일 */
+		nav ul li {
+			list-style: none;
+		    position: relative; /* 하위 메뉴의 기준점 */
+		}
+		
+		/* 드롭다운 박스 숨김 상태 */
+		.dropdown-menu {
+		    display: none;
+		    position: absolute;
+		    top: 100%;
+		    left: 50%;
+		    transform: translateX(-50%); /* 중앙 정렬 */
+		    background: white;
+		    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+		    border-radius: 10px;
+		    padding: 10px 0;
+		    min-width: 160px;
+		    z-index: 2000;
+		    border: 1px solid #eee;
+		}
+		
+		/* 마우스 올렸을 때 보이기 */
+		nav ul li:hover .dropdown-menu {
+		    display: block;
+		}
+		
+		/* 드롭다운 링크 스타일 */
+		.dropdown-menu li {
+		    display: block;
+		    margin: 0;
+			z-index: 1000;
+		}
+		.dropdown-menu a {
+		    display: block;
+		    padding: 10px 20px;
+		    font-size: 0.9rem;
+		    color: var(--text-dark);
+		    font-weight: 500;
+		    text-align: center;
+		    white-space: nowrap; /* 줄바꿈 방지 */
+			z-index: 1000;
+		}
+		.dropdown-menu a:hover {
+		    background: var(--bg-light);
+		    color: var(--primary-color);
+			z-index: 1000;
+		}
+		
         /* 헤더 스타일 */
         main-header {
 			display: flex; justify-content: space-between; align-items: center;
@@ -27,6 +76,7 @@
         nav ul { display: flex; gap: 40px; }
         nav a { font-weight: 600; color: var(--text-dark); font-size: 1rem; }
         nav a:hover { color: var(--primary-color); }
+
 
         /* 섹션 공통 */
         section { padding: 80px 5%; max-width: 1400px; margin: 0 auto; }
@@ -635,6 +685,7 @@
     
 </body>
 </html>
+
 
 
 
