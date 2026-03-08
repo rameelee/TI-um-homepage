@@ -155,61 +155,120 @@
 
       /* Activities Overview (학회 스타일 설명 섹션) */
 
-    .activities-overview{
-        max-width:900px;
-        margin:80px auto 0 auto;
-    }
-    
-    .activity-detail{
-        margin-bottom:70px;
-    }
-    
-    .activity-detail h3{
-        font-size:1.6rem;
-        font-weight:700;
-        margin-bottom:15px;
-    }
-    
-    .activity-quote{
-        border-left:4px solid var(--primary-color);
-        padding-left:15px;
-        font-weight:600;
-        margin-bottom:20px;
-    }
-    
-    .activity-desc{
-        padding-left:20px;
-        margin-bottom:20px;
-    }
-    
-    .activity-desc li{
-        margin-bottom:10px;
-        color:var(--text-light);
-        line-height:1.7;
-    }
-    
-    .activity-more{
-        font-weight:600;
-        color:var(--primary-color);
-        display:inline-block;
-        margin-bottom:20px;
-    }
-    
-    .activity-more:hover{
-        text-decoration:underline;
-    }
-    
-    .activity-note{
-        background:#f4f1e7;
-        padding:20px;
-        border-radius:12px;
-    }
-    
-    .activity-divider{
-        border-top:1px solid #e5e7eb;
-        margin:60px 0;
-    }
-      
+	    .activities-overview{
+	        max-width:900px;
+	        margin:80px auto 0 auto;
+	    }
+	    
+	    .activity-detail{
+	        margin-bottom:70px;
+	    }
+	    
+	    .activity-detail h3{
+	        font-size:1.6rem;
+	        font-weight:700;
+	        margin-bottom:15px;
+	    }
+	    
+	    .activity-quote{
+	        border-left:4px solid var(--primary-color);
+	        padding-left:15px;
+	        font-weight:600;
+	        margin-bottom:20px;
+	    }
+	    
+	    .activity-desc{
+	        padding-left:20px;
+	        margin-bottom:20px;
+	    }
+	    
+	    .activity-desc li{
+	        margin-bottom:10px;
+	        color:var(--text-light);
+	        line-height:1.7;
+	    }
+	    
+	    .activity-more{
+	        font-weight:600;
+	        color:var(--primary-color);
+	        display:inline-block;
+	        margin-bottom:20px;
+	    }
+	    
+	    .activity-more:hover{
+	        text-decoration:underline;
+	    }
+	    
+	    .activity-note{
+	        background:#f4f1e7;
+	        padding:20px;
+	        border-radius:12px;
+	    }
+	    
+	    .activity-divider{
+	        border-top:1px solid #e5e7eb;
+	        margin:60px 0;
+	    }
+	
+		/* 주요 활동 프로그램 */
+		.activity-program{
+		margin-top:80px;
+		}
+		
+		.program-tabs{
+		display:flex;
+		gap:40px;
+		margin-bottom:40px;
+		border-bottom:1px solid #e5e7eb;
+		padding-bottom:10px;
+		}
+		
+		.tab{
+		font-weight:600;
+		color:var(--text-light);
+		cursor:pointer;
+		padding-bottom:8px;
+		}
+		
+		.tab.active{
+		color:var(--primary-color);
+		border-bottom:3px solid var(--primary-color);
+		}
+		
+		.program-content{
+		display:flex;
+		gap:40px;
+		align-items:flex-start;
+		}
+		
+		.program-image img{
+		width:260px;
+		border-radius:6px;
+		}
+		
+		.program-text{
+		flex:1;
+		}
+		
+		.program-text h3{
+		font-size:1.6rem;
+		margin-bottom:20px;
+		}
+		
+		.program-text p{
+		color:var(--text-light);
+		line-height:1.7;
+		margin-bottom:15px;
+		}
+	
+		.program-image img{
+		transition:0.3s;
+		}
+		
+		.program-image img:hover{
+		transform:scale(1.03);
+		}
+		
 		/* [모바일 전용 스타일 - 헤더 및 전체 레이아웃 수정] */
 		@media (max-width: 768px) {
 		    /* 1. 전체 틀: 가로 넘침 방지 */
@@ -382,69 +441,51 @@
 		</p>
     </section>
 
-    <section id="Activities Card">
-        <section id="activities">
-        <div class="section-header">
-            <h2>Activity Archives</h2>
-            <p>아이콘을 클릭하면 세부 활동 내역을 확인할 수 있습니다.</p>
-        </div>
-		<div class="activities-container">
-            <div class="activities-img"></div>
-            <div class="activities-text">
-                <h2>Activities of TI:um</h2>
-                <h3>다양한 활동으로<br>배움의 새싹을 키웁니다.</h3>
-                <p>
-                    <strong>티:움(TI:um)</strong>은 서울대학교 첨단융합학부의 공식 학생 주도 학술공동체(Student Honor Society at SNUTI)입니다. 
-                    '티:움'이라는 이름은 Transdisciplinary Innovations(첨단융합)의 약자와 우리말 '틔움'의 의미를 담고 있습니다.
-                </p>
-                <p>
-                    우리는 다양한 전공 배경을 가진 학생들이 모여 학술적 깊이를 더하고, 
-                    서로의 지식을 나누며 함께 성장하는 것을 목표로 합니다. 
-                    단순한 학습을 넘어, 사회에 기여할 수 있는 실천적인 지성 공동체를 지향합니다.
-                </p>
-				<a href="about.html" class="btn">TI:um의 활동 소개 보기</a>
-            </div>
-        </div>
-        <div class="activities-grid">
-            <a href="collaboration.html" class="activity-card">
-                <div class="icon-box">🤝</div>
-                <h3>대외교류 활동</h3>
-                <p>타 학생 단체 연합 세미나, 초청 강연 등 교류 활동 기록</p>
-            </a>
-            <a href="academic.html" class="activity-card">
-                <div class="icon-box">📚</div>
-                <h3>학술나눔 활동</h3>
-                <p>정기 학술 세미나, 정기 활동 공유회, Subgroups 등 지식 나눔 활동 기록</p>
-            </a>
-        </div>
-    </section>
-
-    <section id="talent">
-        <h2>Core Values and Talent</h2>
-        <p>티:움이 지향하는 인재상은 다음과 같습니다.</p>
-
-        <div class="talent-grid">
-            <div class="talent-box">
-                <h4>Transdisciplinary Problem Solver</h4>
-                <p>융합적 사고와 창의적 문제 해결자<br>다양한 분야의 지식을 융합하여 창의적인 해결책을 제시할 수 있는 인재입니다. 기술적·사회적·경제적 문제를 초학제적 사고로 새롭게 분석하고, 구상에서 그치지 않는 실행력과 책임감, 도전정신을 바탕으로 주도적으로 의미 있는 혁신을 만들어냅니다. 경계를 뛰어넘고 기존의 관념에서 벗어나 새로운 패러다임을 만들어내고자 하는 열정을 가진 학생들이 모여, 첨단융합학부 초학제적 혁신의 시작을 최전선에서 만들어갑니다.</p>
-            </div>
-            <div class="talent-box">
-                <h4>Growth Mindset</h4>
-                <p>Growth Mindset을 기반으로 회복탄력적인 학습자로의 성장<br>Growth Mindset을 바탕으로 성장을 중요시하며, 이를 위해 자기 주도적으로 학습하고 주어진 환경에서 적극적으로 기회를 창출하는 인재입니다. 스스로의 역량을 개발하며 지속적인 발전을 추구하는 열정을 지니고 있습니다. 이들은 회복탄력성을 갖춘 학습자로 성장하여, 다양한 역경 속에서도 흔들림 없이 나아가며 급변하는 사회 속에서 리더로 자리매김할 것입니다.</p>
-            </div>
-            <div class="talent-box">
-                <h4>Team Player</h4>
-                <p>협력과 소통을 중시하는 팀 플레이어<br>팀워크의 가치를 이해하고, 서로 다른 의견과 경험을 조화롭게 융합하여 공동의 목표를 위해 협력하는 인재입니다. 책임감을 가짐과 동시에 명료한 communication의 중요성을 이해하고 유연한 사고를 바탕으로 다양한 분야의 전문가들과 함께 협력하여 impactful한 변화를 만들어냅니다.</p>
-            </div>
-            <div class="talent-box">
-                <h4>Responsibility</h4>
-                <p>사회적 책임감을 가지고 servant leadership을 가진 리더<br>사회적 책임감을 가지고, 자신을 비롯하여 타인과 공동체의 성장을 도모할 수 있는 servant leadership을 실천하는 진정성 있는 인재입니다. 개인과 공동체가 함께 긍정적인 시너지를 만들어내며 성장할 수 있도록 노력합니다. 향후, 초연결되는 사회에서 변화를 선도하는 리더로 성장할 수 있을 것입니다.</p>
-            </div>
-             <div class="talent-box">
-                <h4>Embracing Diversity</h4>
-                <p>열린 자세로 다양성의 가치를 존중하는 communicator<br>SNUTI 학생 주도 학술 공동체는 다양한 문화적 배경과 가치관을 가진 여러 사람들과 협력합니다. 열린 시각을 가지고 여러 문화와 배경에서 오는 차이를 존중하며, 글로벌 환경에서 효과적으로 소통하고 협력할 수 있는 능력을 가진 인재입니다. 이들은 다양한 생각들이 오고 가는 소통의 장에서 새롭고 독창적인 통찰력을 얻고, 다양성의 가치를 중요시하며 공동의 목표를 위해 노력할 수 있는 역량을 갖춘 사람입니다.</p>
-            </div>
-        </div>
+    <section id="Activities Introduction">
+        <section class="section activity-program">
+			<div class="section-header">
+			<h2>주요 활동</h2>
+			<p>TI:um이 진행하는 대표적인 프로그램입니다.</p>
+			</div>
+			
+			<div class="program-tabs">
+			
+			<span class="tab active">사회공헌활동</span>
+			<span class="tab">학술교류활동</span>
+			<span class="tab">회원교류활동</span>
+			
+			</div>
+			
+			<div class="program-content">
+			
+			<div class="program-image">
+			<img src="images/junior_engineering.jpg" alt="주니어 공학기술교실">
+			</div>
+			
+			<div class="program-text">
+			
+			<h3>주니어 공학기술교실</h3>
+			
+			<p>
+			주니어 공학기술교실은 초등학생들에게 과학과 공학에 대한 흥미를 높이고,
+			과학적·공학적 소양을 키울 수 있는 경험을 제공하기 위해 시작된 프로그램입니다.
+			</p>
+			
+			<p>
+			또한 TI:um 회원들이 차세대 공학 리더로서 사회에 공헌할 수 있는
+			리더십을 함양하는 계기를 마련하고자 합니다.
+			</p>
+			
+			<p>
+			이 프로그램은 과학 및 공학적 경험에서 소외된 초등학교와 지역 아동센터를 직접 방문하여,
+			학생들이 공학 키트를 제작하고 체험하는 활동으로 진행됩니다.
+			</p>
+			
+			</div>
+			
+			</div>
+			
+		</section>
     </section>
 
     <footer id="contact">
