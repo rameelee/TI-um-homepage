@@ -268,6 +268,62 @@
 		.program-image img:hover{
 		transform:scale(1.03);
 		}
+
+		/* 탭 버튼 */
+		.program-tabs{
+		display:flex;
+		gap:40px;
+		margin-bottom:40px;
+		border-bottom:1px solid #e5e7eb;
+		}
+		
+		.tab{
+		background:none;
+		border:none;
+		font-size:1rem;
+		font-weight:600;
+		color:var(--text-light);
+		padding:10px 0;
+		cursor:pointer;
+		}
+		
+		.tab.active{
+		color:var(--primary-color);
+		border-bottom:3px solid var(--primary-color);
+		}
+		
+		
+		/* 콘텐츠 */
+		
+		.program-content{
+		display:none;
+		gap:40px;
+		align-items:flex-start;
+		}
+		
+		.program-content.active{
+		display:flex;
+		}
+		
+		.program-image img{
+		width:260px;
+		border-radius:6px;
+		}
+		
+		.program-text{
+		flex:1;
+		}
+		
+		.program-text h3{
+		font-size:1.6rem;
+		margin-bottom:20px;
+		}
+		
+		.program-text p{
+		color:var(--text-light);
+		line-height:1.7;
+		margin-bottom:15px;
+		}
 		
 		/* [모바일 전용 스타일 - 헤더 및 전체 레이아웃 수정] */
 		@media (max-width: 768px) {
@@ -342,7 +398,7 @@
 		</nav>
 	</main-header>
 
-    <section id="Greetings">
+    <section id="overview">
         <div class="activities-overview">
 
 		    <div class="section-header">
@@ -422,7 +478,7 @@
 		        학술의 발전은 끝이 없습니다.<br>
 		        상시 새로운 subgroup 및 학술 활동 아이디어를 모집 중입니다.
 		        </div>
-		
+				<div class="activity-divider"></div>
 		    </div>
 		
 		</div>
@@ -448,15 +504,21 @@
 			<p>TI:um이 진행하는 대표적인 프로그램입니다.</p>
 			</div>
 			
+			
+			<!-- 탭 버튼 -->
+			
 			<div class="program-tabs">
 			
-			<span class="tab active">사회공헌활동</span>
-			<span class="tab">학술교류활동</span>
-			<span class="tab">회원교류활동</span>
+			<button class="tab active" onclick="showProgram('social')">사회공헌활동</button>
+			<button class="tab" onclick="showProgram('academic')">학술교류활동</button>
+			<button class="tab" onclick="showProgram('member')">회원교류활동</button>
 			
 			</div>
 			
-			<div class="program-content">
+			
+			<!-- 사회공헌 -->
+			
+			<div class="program-content active" id="social">
 			
 			<div class="program-image">
 			<img src="images/junior_engineering.jpg" alt="주니어 공학기술교실">
@@ -467,7 +529,7 @@
 			<h3>주니어 공학기술교실</h3>
 			
 			<p>
-			주니어 공학기술교실은 초등학생들에게 과학과 공학에 대한 흥미를 높이고,
+			주니어 공학기술교실은 초등학생들에게 과학과 공학에 대한 흥미를 높이고
 			과학적·공학적 소양을 키울 수 있는 경험을 제공하기 위해 시작된 프로그램입니다.
 			</p>
 			
@@ -477,7 +539,7 @@
 			</p>
 			
 			<p>
-			이 프로그램은 과학 및 공학적 경험에서 소외된 초등학교와 지역 아동센터를 직접 방문하여,
+			이 프로그램은 과학 및 공학적 경험에서 소외된 초등학교와 지역 아동센터를 방문하여
 			학생들이 공학 키트를 제작하고 체험하는 활동으로 진행됩니다.
 			</p>
 			
@@ -485,7 +547,61 @@
 			
 			</div>
 			
-		</section>
+			
+			<!-- 학술 교류 -->
+			
+			<div class="program-content" id="academic">
+			
+			<div class="program-image">
+			<img src="images/academic_activity.jpg">
+			</div>
+			
+			<div class="program-text">
+			
+			<h3>학술 교류 활동</h3>
+			
+			<p>
+			TI:um은 구성원 간의 자유로운 지식 교류와 학술적 토론을 통해
+			공학적 사고와 문제 해결 능력을 발전시키는 활동을 진행합니다.
+			</p>
+			
+			<p>
+			정기 세미나, 연구 발표, 프로젝트 기반 학습 등을 통해
+			다양한 분야의 지식을 공유합니다.
+			</p>
+			
+			</div>
+			
+			</div>
+			
+			
+			<!-- 회원 교류 -->
+			
+			<div class="program-content" id="member">
+			
+			<div class="program-image">
+			<img src="images/member_activity.jpg">
+			</div>
+			
+			<div class="program-text">
+			
+			<h3>회원 교류 활동</h3>
+			
+			<p>
+			회원 간의 교류와 네트워크 형성을 위해
+			워크숍, 네트워킹 행사, 친목 프로그램을 진행합니다.
+			</p>
+			
+			<p>
+			이를 통해 협력적인 공동체 문화를 형성하고
+			TI:um의 지속적인 발전을 도모합니다.
+			</p>
+			
+			</div>
+			
+			</div>
+			
+			</section>
     </section>
 
     <footer id="contact">
@@ -517,5 +633,26 @@
 	        <p style="margin-top:20px; font-size:0.8rem;">&copy; 2026 TI:um. All rights reserved.</p>
 	    </div>
 	</footer>
+	<script>
+	function showProgram(id){
+	
+	const contents = document.querySelectorAll('.program-content');
+	const tabs = document.querySelectorAll('.tab');
+	
+	contents.forEach(content => {
+	content.classList.remove('active');
+	});
+	
+	tabs.forEach(tab => {
+	tab.classList.remove('active');
+	});
+	
+	document.getElementById(id).classList.add('active');
+	
+	event.target.classList.add('active');
+	
+	}
+	
+	</script>
 </body>
 </html>
