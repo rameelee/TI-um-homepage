@@ -201,7 +201,36 @@
             vertical-align: middle;
         }
 
-        footer { background: #111; color: #888; padding: 40px 5%; text-align: center; margin-top: 50px; }
+		/* [추가] 푸터 SNS 및 관련 사이트 스타일 */
+		.footer-content {
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		    gap: 20px;
+		}
+		.social-icons {
+		    display: flex;
+		    gap: 15px;
+		}
+		.social-icons a {
+		    width: 40px; height: 40px;
+		    background: #333; /* 아이콘 배경색 */
+		    border-radius: 50%;
+		    display: flex; align-items: center; justify-content: center;
+		    transition: 0.3s;
+		}
+		.social-icons a:hover { background: var(--primary-color); transform: translateY(-3px); }
+		.social-icons svg { width: 20px; height: 20px; fill: white; }
+		
+		.related-sites {
+		    margin-top: 10px;
+		    padding: 10px;
+		    border-top: 1px solid #333;
+		}
+		.related-sites a {
+		    font-size: 0.85rem; color: #888; margin: 0 10px; text-decoration: underline;
+		}
+		.related-sites a:hover { color: white; }
 
         /* 부드러운 화면 전환 애니메이션 정의 */
         @keyframes fadeIn {
@@ -711,6 +740,7 @@
     
 </body>
 </html>
+
 
 
 
