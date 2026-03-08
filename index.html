@@ -23,8 +23,29 @@
 		    background-color: #fff;
 		}
 		
-		/* [추가] 드롭다운 메뉴 스타일 */
+        /* 1. 기본 설정 및 컬러 시스템 */
+        :root {
+            --primary-color: #006837; /* 서울대 상징색과 유사한 짙은 초록 또는 자연의 초록 */
+            --accent-color: #8BC34A; /* 새싹을 연상시키는 밝은 연두 */
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --bg-light: #F9FAFB;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard', sans-serif; }
+        body { line-height: 1.6; color: var(--text-dark); background-color: #fff; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        
+        /* [공통 스타일 - index.html과 동일한 분위기 유지] */
+        :root { --primary-color: #006837; --text-dark: #1F2937; --text-light: #6B7280; --bg-light: #F9FAFB; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard', sans-serif; }
+        body { color: var(--text-dark); background: #fff; }
+        a { text-decoration: none; color: inherit; }
+		/* 원준이가 추가한 부분 시작 - 2026.03.03. */
+		/* 드롭다운 메뉴 스타일 */
 		nav ul li {
+			list-style: none;
 		    position: relative; /* 하위 메뉴의 기준점 */
 		}
 		
@@ -53,6 +74,7 @@
 		.dropdown-menu li {
 		    display: block;
 		    margin: 0;
+			z-index: 1000;
 		}
 		.dropdown-menu a {
 		    display: block;
@@ -62,32 +84,19 @@
 		    font-weight: 500;
 		    text-align: center;
 		    white-space: nowrap; /* 줄바꿈 방지 */
+			z-index: 1000;
 		}
 		.dropdown-menu a:hover {
 		    background: var(--bg-light);
 		    color: var(--primary-color);
+			z-index: 1000;
 		}
 		
-        /* 1. 기본 설정 및 컬러 시스템 */
-        :root {
-            --primary-color: #006837; /* 서울대 상징색과 유사한 짙은 초록 또는 자연의 초록 */
-            --accent-color: #8BC34A; /* 새싹을 연상시키는 밝은 연두 */
-            --text-dark: #1F2937;
-            --text-light: #6B7280;
-            --bg-light: #F9FAFB;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard', sans-serif; }
-        body { line-height: 1.6; color: var(--text-dark); background-color: #fff; }
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; }
-        
-        /* 2. 헤더 (로고 및 네비게이션) */
-        header {
-            display: flex; justify-content: space-between; align-items: center;
+        /* 헤더 스타일 */
+        main-header {
+			display: flex; justify-content: space-between; align-items: center;
             padding: 15px 5%; background: white; 
-            border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000;
-        }
+            border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000;}
 
         .logo-link { display: flex; align-items: center; gap: 10px; }
         .logo-img { height: 50px; width: auto; } /* 로고 높이 조절 */
@@ -97,6 +106,7 @@
         nav ul { display: flex; gap: 40px; }
         nav a { font-weight: 600; color: var(--text-dark); font-size: 1rem; }
         nav a:hover { color: var(--primary-color); }
+
 
         /* 3. 히어로 섹션: 배경을 깨끗한 흰색으로 변경 */
 	.hero {
